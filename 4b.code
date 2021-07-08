@@ -1,0 +1,11 @@
+% Problem 4
+% Part b)
+syms x y z x1 y1 z1 x2 y2 z2 x3 y3 z3 % Allows for variables to be used symbolically
+A = [y1+z1 y2+z2 y3+z3; x1+z1 x2+z2 x3+z3; x1+y1 x2+y2 x3+y3] % Matrix A
+B = [x1 x2 x3; y1 y2 y3; z1 z2 z3] % Matrix B
+D = transpose(A)
+E = transpose(B)
+Aug1 = [E D] % Switched for this part of the problem
+H = rref(Aug1)
+FPrime = [0 1 1; 1 0 1; 1 1 0] % Found from H (right side of matrix)
+check1 = FPrime*B % Checks answer
