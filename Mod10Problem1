@@ -1,0 +1,15 @@
+A = [1 1 3; 0 -1 0; 1 -2 2; 3 0 2];
+disp(A);
+[U,S,V] = svd(A); % Finds SVD of A
+disp(U); 
+disp(V);
+disp(S); % Same as sigma
+Splus=pinv(S); % Finds pseudoinverse of sigma
+disp(Splus);
+Aplus = V*Splus*U' % Formula from lecture slides to find pseudoinverse of A
+check1 = pinv(A) % Check if Aplus is the pseduoinverse of A
+b = [2; 2; 6; 5];
+x = Aplus*b; % x is the least square solution according to Corollary 5.7, #5
+disp(x);
+check2 = A*x; % Checking the least squares solution
+disp(check2); 
