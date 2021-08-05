@@ -1,0 +1,16 @@
+A = [1 1 3; 0 -1 0; 1 -2 2; 3 0 2];
+disp(A);
+[U,S,V] = svd(A); % 1) Finds SVD of A
+disp(U); 
+disp(V);
+disp(S); % Same as sigma
+b = [2; 2; 6; 5];
+bprime = U'*b; % 2) Computes b'
+disp(bprime);
+k = rank(A); % 3) First, compute the rank.
+disp(k); % 3) Since k = 3, we will create y, a 3x1 vector that contains the quotients of the first 3 entries of bprime divided by the 3 non-zero, diagonal entries of S
+y = [-1.450; 1.596; .282]; % 3) Used a calculator to find these values in order to create y
+x = V*y; % 4) Computes, x, the least squares solution
+disp(x);
+check1 = A*x; % Checking if Ax = b
+disp(check1);
