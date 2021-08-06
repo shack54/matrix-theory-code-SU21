@@ -9,7 +9,8 @@ bprime = U'*b; % 2) Computes b'
 disp(bprime);
 k = rank(A); % 3) First, compute the rank.
 disp(k); % 3) Since k = 3, we will create y, a 3x1 vector that contains the quotients of the first 3 entries of bprime divided by the 3 non-zero, diagonal entries of S
-y = [-1.450; 1.596; .282]; % 3) Used a calculator to find these values in order to create y
+h = -7.3229/5.05; l = 3.8787/2.431; j = .4536/1.6086; % 3) bprime_i / S_i calculations
+y = [h; l; j]; % 3) Used calculations above to find these values in order to create y
 x = V*y; % 4) Computes, x, the least squares solution
 disp(x);
 check1 = A*x; % Checking if Ax = b
