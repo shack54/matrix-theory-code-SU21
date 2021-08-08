@@ -7,7 +7,7 @@ disp(S); % Same as sigma
 Splus=pinv(S); % Finds pseudoinverse of sigma
 disp(Splus);
 Aplus = V*Splus*U' % Formula from lecture slides to find pseudoinverse of A
-check1 = pinv(A) % Check if Aplus is the pseduoinverse of A
+check1 = pinv(A) % Check if Aplus is the pseudoinverse of A
 b = [2; 2; 6; 5];
 x = Aplus*b; % x is the least square solution according to Corollary 5.7, #5
 disp(x);
